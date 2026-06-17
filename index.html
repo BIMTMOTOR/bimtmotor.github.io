@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIMT WORLD ÆóÒµ¹ÙÍø</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIMT MOTOR</title>
+    <meta name="description" content="BIMT MOTOR - Make Better Happen" />
     <style>
-        /* ÖØÖÃÄÚÍâ±ß¾à£¬ÈÃÒ³Ãæ³äÂúÈ«ÆÁ */
         * {
             margin: 0;
             padding: 0;
@@ -13,61 +13,137 @@
         }
 
         body {
-            background: #0b1a2f;          /* ÉîÀ¶ºÚÉ«±³¾°£¬ÏÔµÃÎÈÖØ´óÆø */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            /* äº®çœ¼å¸Œæœ›æ¸å˜ï¼šè“â†’é’â†’ç´« */
+            background: linear-gradient(145deg, #00c6ff 0%, #0072ff 40%, #a18cd1 100%);
+            text-align: center;
+            overflow: hidden;
+            color: #fff;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .section {
+            flex: 1;
             display: flex;
             justify-content: center;
+            padding: 0 20px;
+        }
+
+        /* ä¸Šéƒ¨ï¼šflexåˆ—ï¼Œåº•éƒ¨å¯¹é½ */
+        .section-top {
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 0.3em;
+        }
+
+        /* ä¸­éƒ¨ï¼šå±…ä¸­ */
+        .section-middle {
             align-items: center;
-            min-height: 100vh;
-            font-family: 'Arial', 'Helvetica', sans-serif;
-            text-align: center;
-            padding: 20px;
         }
 
-        .container {
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        /* Ö÷±êÌâ£º¾Ş·ù¡¢¼Ó´Ö¡¢½ğÊô½¥±ä */
-        .main-title {
-            font-size: clamp(4rem, 15vw, 10rem);   /* ×ÔÊÊÓ¦´óĞ¡ */
-            font-weight: 900;
-            background: linear-gradient(135deg, #f0e68c, #ffd700, #f0e68c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 4px;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-            margin-bottom: 0.2em;
-        }
-
-        /* ¸±±êÌâ£ºÈáºÍÁÁÉ«£¬ÂÔĞ¡ */
-        .sub-title {
-            font-size: clamp(1.8rem, 5vw, 3.5rem);
-            font-weight: 300;
-            color: #aad0f5;
-            letter-spacing: 6px;
-            text-shadow: 0 0 20px rgba(170, 208, 245, 0.2);
-            border-top: 2px solid rgba(255, 215, 0, 0.3);
-            display: inline-block;
+        /* ä¸‹éƒ¨ï¼šflexåˆ—ï¼Œé¡¶éƒ¨å¯¹é½ */
+        .section-bottom {
+            flex-direction: column;
+            justify-content: flex-start;
             padding-top: 0.3em;
         }
 
-        /* ×°ÊÎĞÔĞ¡µã×º£¨¿ÉÑ¡£© */
-        .tagline {
-            margin-top: 3rem;
-            font-size: 1rem;
-            color: rgba(255,255,255,0.2);
-            letter-spacing: 2px;
+        /* æ‰€æœ‰æ–‡æœ¬ï¼šä¸æ¢è¡Œï¼ŒåŠ ç²—ï¼Œå±…ä¸­ */
+        .section span {
+            display: block;
+            white-space: nowrap;
+            font-weight: 700; /* å…¨éƒ¨åŠ ç²— */
+            line-height: 1.2;
+            margin: 0 auto;   /* æ°´å¹³å±…ä¸­ */
+        }
+
+        /* ç»„1ï¼šWELCOME TO å’Œ Make Better Happen å®½åº¦ä¸€è‡´ */
+        .top-line1,
+        .bottom-text {
+            width: 75%;
+        }
+
+        /* ç»„2ï¼šBIMT WORLD å’Œ BIMT MOTOR BETTER WORK å®½åº¦ä¸€è‡´ */
+        .top-line2,
+        .middle-text {
+            width: 90%;
+        }
+
+        /* ç‹¬ç«‹å­—ä½“å¤§å° */
+        .top-line1 {
+            font-size: clamp(1.2rem, 4vw, 2.8rem);
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .top-line2 {
+            font-size: clamp(3rem, 12vw, 7rem);
+            letter-spacing: 0.04em;
+            background: linear-gradient(135deg, #fff7b0, #ffe066);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+            filter: drop-shadow(0 4px 20px rgba(255, 215, 0, 0.3));
+        }
+
+        .middle-text {
+            font-size: clamp(1.6rem, 5vw, 3.8rem);
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .bottom-text {
+            font-size: clamp(1.2rem, 3.5vw, 2.6rem);
+            letter-spacing: 0.12em;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* æçª„å±å¾®è°ƒï¼Œæ”¾å®½å®½åº¦ä»¥é˜²æº¢å‡º */
+        @media (max-width: 360px) {
+            .top-line1,
+            .bottom-text {
+                width: 85%;
+            }
+            .top-line2,
+            .middle-text {
+                width: 95%;
+            }
+            .top-line1 { font-size: 1rem; }
+            .top-line2 { font-size: 2.2rem; }
+            .middle-text { font-size: 1.2rem; }
+            .bottom-text { font-size: 1rem; }
+        }
+
+        /* è¶…å®½å± */
+        @media (min-width: 1920px) {
+            .top-line1 { font-size: 3rem; }
+            .top-line2 { font-size: 8rem; }
+            .middle-text { font-size: 4.2rem; }
+            .bottom-text { font-size: 3rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="main-title">WELCOME BIMT WORLD</h1>
-        <div class="sub-title">Make Better Happen</div>
-        <!-- µ×²¿¿É¼ÓÒ»¾äÆóÒµ¿ÚºÅ£¨¿É²»¼Ó£© -->
-        <div class="tagline">? ×¿Ô½ ¡¤ ´´ĞÂ ¡¤ ¹²Ó® ?</div>
+    <!-- ä¸Šéƒ¨ -->
+    <div class="section section-top">
+        <span class="top-line1">WELCOME TO</span>
+        <span class="top-line2">BIMT WORLD</span>
+    </div>
+
+    <!-- ä¸­éƒ¨ -->
+    <div class="section section-middle">
+        <span class="middle-text">BIMT MOTOR BETTER WORK</span>
+    </div>
+
+    <!-- ä¸‹éƒ¨ -->
+    <div class="section section-bottom">
+        <span class="bottom-text">Make Better Happen</span>
     </div>
 </body>
 </html>
