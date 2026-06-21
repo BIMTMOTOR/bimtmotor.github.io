@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BIMT MOTOR - robot motor servo motor stepper motor</title>
+    <title>BIMT MOTOR - Robot Motor Servo Motor Stepper Motor</title>
     <style>
-        /* ===== »´æ÷÷ÿ÷√ & ª˘¥° ===== */
+        /* ===== ÂÖ®Â±ÄÈáçÁΩÆ & Âü∫Á°Ä ===== */
         * {
             margin: 0;
             padding: 0;
@@ -31,7 +31,7 @@
             flex-direction: column;
         }
 
-        /* ===== ∂•≤ø£∫LOGO + π„∏Ê”Ô ===== */
+        /* ===== È°∂ÈÉ®ÔºöLOGO + ÂπøÂëäËØ≠ ===== */
         .header-left {
             display: flex;
             align-items: baseline;
@@ -56,7 +56,7 @@
             opacity: 0.8;
         }
 
-        /* ===== µº∫Ω¿∏ ===== */
+        /* ===== ÂØºËà™Ê†è ===== */
         .navbar {
             display: flex;
             flex-wrap: wrap;
@@ -106,7 +106,7 @@
             width: 100%;
         }
 
-        /* ===== ÷˜ƒ⁄»›«¯ ===== */
+        /* ===== ‰∏ªÂÜÖÂÆπÂå∫ ===== */
         .main-content {
             flex: 1;
             display: flex;
@@ -114,7 +114,7 @@
             gap: 50px;
         }
 
-        /* ----- 1) ◊ÛÕº”“Œƒ (π´ÀæºÚΩÈ) ----- */
+        /* ----- 1) Â∑¶ÂõæÂè≥Êñá (ÂÖ¨Âè∏ÁÆÄ‰ªã) - Â∑≤ÊÅ¢Â§çÂÆåÊï¥ÊèèËø∞ ----- */
         .intro-section {
             display: flex;
             gap: 40px;
@@ -159,15 +159,7 @@
             margin-bottom: 4px;
         }
 
-        .company-fullname {
-            font-size: clamp(1.1rem, 2vw, 1.6rem);
-            font-weight: 700;
-            color: #0072ff;
-            letter-spacing: 0.03em;
-            line-height: 1.4;
-            margin-bottom: 6px;
-        }
-
+        /* ÂÆåÊï¥ÊèèËø∞ÊÆµËêΩÔºå‰øùÁïôÂéüÊñá */
         .intro-text p {
             font-size: clamp(0.95rem, 1.5vw, 1.15rem);
             line-height: 1.8;
@@ -204,7 +196,7 @@
             transform: scale(0.97);
         }
 
-        /* ----- 2) ≤˙∆∑ 4 π¨∏Ò ----- */
+        /* ----- 2) ‰∫ßÂìÅ 4 ÂÆ´Ê†º ----- */
         .products-section {
             text-align: center;
         }
@@ -280,7 +272,7 @@
             transform: scale(1.02);
         }
 
-        /* ----- 3) ¡™œµŒ“√« (µÿÕº + ¡™œµ∑Ω Ω) ”≈ªØ∞Ê ----- */
+        /* ----- 3) ËÅîÁ≥ªÊàë‰ª¨ (Âú∞Âõæ + ËÅîÁ≥ªÊñπÂºè) ----- */
         .contact-section {
             display: flex;
             gap: 40px;
@@ -291,7 +283,6 @@
             box-shadow: 0 4px 20px rgba(0, 114, 255, 0.06);
         }
 
-        /* µÿÕº»›∆˜£∫øÌ∂»Àıºı÷¡35%£¨ π”√4:3±»¿˝ */
         .contact-map {
             flex: 0 0 35%;
             border-radius: 16px;
@@ -318,7 +309,6 @@
             min-width: 0;
         }
 
-        /* π´Àæ√˚≥∆£∫»∑±£“ª––œ‘ æ£¨  µ±Àı–°◊÷ÃÂ */
         .contact-info .company-name {
             font-size: clamp(1rem, 1.5vw, 1.4rem);
             font-weight: 700;
@@ -326,7 +316,7 @@
             line-height: 1.3;
             white-space: nowrap;
             overflow: hidden;
-            text-overflow: ellipsis; /* ÕÚ“ª≥¨≥§ª·œ‘ æ °¬‘∫≈£¨µ´Œ“√«ª·øÿ÷∆≤ª≥¨ */
+            text-overflow: ellipsis;
         }
 
         .contact-info .detail {
@@ -356,7 +346,7 @@
             text-decoration: underline;
         }
 
-        /* ===== µ◊≤ø∞Ê»® ===== */
+        /* ===== Â∫ïÈÉ®ÁâàÊùÉ ===== */
         .footer {
             text-align: center;
             font-size: clamp(0.7rem, 1.2vw, 1rem);
@@ -367,129 +357,105 @@
             margin-top: 40px;
         }
 
-        /* ===== œÏ”¶ Ω…Ëº∆ ===== */
+        /* ===== ÂìçÂ∫îÂºèËÆæËÆ° ===== */
 
-        /* ∆Ω∞Âº∞“‘œ¬ */
         @media (max-width: 992px) {
             .intro-section {
                 flex-direction: column;
                 padding: 24px;
             }
-
             .intro-image {
                 flex: 0 0 100%;
                 width: 100%;
             }
-
             .intro-text .btn-more {
                 align-self: center;
                 width: 60%;
                 min-width: 160px;
             }
-
             .products-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
             }
-
             .contact-section {
                 flex-direction: column;
                 padding: 24px;
             }
-
             .contact-map {
                 flex: 0 0 auto;
                 width: 100%;
                 aspect-ratio: 4 / 3;
                 min-height: unset;
             }
-
             .contact-info {
                 align-items: center;
                 text-align: center;
             }
-
             .contact-info .company-name {
                 white-space: normal;
-                /*  ÷ª˙‘ –Ì’€–– */
                 text-overflow: clip;
             }
-
             .contact-info .detail {
                 justify-content: center;
                 flex-wrap: wrap;
             }
         }
 
-        /*  ÷ª˙ */
         @media (max-width: 600px) {
             body {
                 padding: 12px;
             }
-
             .header-left {
                 justify-content: center;
                 border-bottom: none;
                 padding-bottom: 6px;
             }
-
             .navbar {
                 gap: 6px 18px;
                 padding: 12px 0 14px;
                 margin-bottom: 20px;
                 border-bottom: 1px solid rgba(0, 114, 255, 0.06);
             }
-
             .navbar a {
                 font-size: 0.95rem;
             }
-
             .intro-section {
                 padding: 18px;
                 border-radius: 14px;
             }
-
             .intro-text .btn-more {
                 width: 80%;
                 min-width: 140px;
                 padding: 12px 20px;
             }
-
             .products-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 14px;
             }
-
             .product-item {
                 padding: 14px 10px 16px;
             }
-
             .product-item .product-name {
                 font-size: 0.9rem;
                 padding: 6px 14px;
             }
-
             .contact-section {
                 padding: 18px;
                 border-radius: 14px;
             }
-
             .contact-info .company-name {
                 font-size: 1rem;
                 white-space: normal;
             }
-
             .contact-info .detail {
                 font-size: 0.85rem;
                 gap: 4px;
                 flex-direction: column;
                 align-items: center;
             }
-
             .contact-info .detail .label {
                 min-width: auto;
             }
-
             .footer {
                 font-size: 0.65rem;
                 margin-top: 30px;
@@ -497,14 +463,12 @@
             }
         }
 
-        /* ≥¨–°∆¡ (°‹400px) ≤˙∆∑±‰“ª¡– */
         @media (max-width: 420px) {
             .products-grid {
                 grid-template-columns: 1fr;
                 max-width: 320px;
                 margin: 0 auto;
             }
-
             .product-item .img-wrap {
                 aspect-ratio: 4 / 3;
             }
@@ -514,13 +478,13 @@
 <body>
     <div class="container">
 
-        <!-- ===== ∂•≤ø LOGO + π„∏Ê”Ô ===== -->
+        <!-- ===== È°∂ÈÉ® LOGO + ÂπøÂëäËØ≠ ===== -->
         <div class="header-left">
             <span class="logo">BIMT</span>
             <span class="slogan">Make Better Happen</span>
         </div>
 
-        <!-- ===== µº∫Ω¿∏ ===== -->
+        <!-- ===== ÂØºËà™Ê†è ===== -->
         <nav class="navbar">
             <a href="/home.html" class="active">Home</a>
             <a href="/about-us.html">About Us</a>
@@ -528,18 +492,16 @@
             <a href="/contact.html">Contact</a>
         </nav>
 
-        <!-- ===== ÷˜ƒ⁄»› ===== -->
+        <!-- ===== ‰∏ªÂÜÖÂÆπ ===== -->
         <div class="main-content">
 
-            <!-- 1) ◊ÛÕº”“Œƒ π´ÀæºÚΩÈ£®”¢Œƒ£¨≤π≥‰–≈œ¢£© -->
+            <!-- 1) Â∑¶ÂõæÂè≥Êñá ÂÖ¨Âè∏ÁÆÄ‰ªãÔºàÊ†áÈ¢òÊîπ‰∏∫ About BIMT mortorÔºåÊ≠£ÊñáÊÅ¢Â§çÂÆåÊï¥ÊèèËø∞Ôºâ -->
             <section class="intro-section">
                 <div class="intro-image">
-                    <!-- ª˙∆˜»À ÷±€Õº∆¨ -->
                     <img src="https://picsum.photos/seed/robotic-arm/800/600" alt="BIMT MOTOR Robotic Arm" loading="lazy" />
                 </div>
                 <div class="intro-text">
-                    <h2>About BIMT MOTOR</h2>
-                    <div class="company-fullname">BIMT MOTOR BETTER INTELLIGENT MANUFACTURING TECHNOLOGY CO., LTD</div>
+                    <h2>About BIMT mortor</h2>
                     <p>
                         Founded in 2026, BIMT Motor is a high-tech enterprise dedicated to providing intelligent robotic motor solutions. 
                         Our product portfolio includes robot motors, servo motors, stepper motors, and more. 
@@ -550,53 +512,43 @@
                 </div>
             </section>
 
-            <!-- 2) ≤˙∆∑ 4 π¨∏Ò£®Õº∆¨”Î√˚≥∆∂‘”¶£© -->
+            <!-- 2) ‰∫ßÂìÅ 4 ÂÆ´Ê†ºÔºàÂõæÁâá‰∏éÂêçÁß∞ÂØπÂ∫îÔºâ -->
             <section class="products-section">
                 <h2>Our Products</h2>
                 <div class="products-grid">
-
-                    <!-- Robot Motor -->
                     <div class="product-item">
                         <div class="img-wrap">
                             <img src="https://picsum.photos/seed/robotmotor/400/400" alt="Robot Motor" loading="lazy" />
                         </div>
                         <a href="/products.html" class="product-name">Robot Motor</a>
                     </div>
-
-                    <!-- Servo Motor -->
                     <div class="product-item">
                         <div class="img-wrap">
                             <img src="https://picsum.photos/seed/servomotor/400/400" alt="Servo Motor" loading="lazy" />
                         </div>
                         <a href="/products.html" class="product-name">Servo Motor</a>
                     </div>
-
-                    <!-- Stepper Motor -->
                     <div class="product-item">
                         <div class="img-wrap">
                             <img src="https://picsum.photos/seed/steppermotor/400/400" alt="Stepper Motor" loading="lazy" />
                         </div>
                         <a href="/products.html" class="product-name">Stepper Motor</a>
                     </div>
-
-                    <!-- Brushless DC Motor -->
                     <div class="product-item">
                         <div class="img-wrap">
                             <img src="https://picsum.photos/seed/bldcmotor/400/400" alt="Brushless DC Motor" loading="lazy" />
                         </div>
                         <a href="/products.html" class="product-name">Brushless DC Motor</a>
                     </div>
-
                 </div>
             </section>
 
-            <!-- 3) ¡™œµŒ“√«£∫µÿÕº + ¡™œµ∑Ω Ω£®µÿÕº±»¿˝4:3£¨øÌ∂»Àıºı£© -->
+            <!-- 3) ËÅîÁ≥ªÊàë‰ª¨ÔºöÂú∞Âõæ + ËÅîÁ≥ªÊñπÂºè -->
             <section class="contact-section">
                 <div class="contact-map">
-                    <!-- OpenStreetMap «∂»ÎµÿÕº£®œ‘ æ…œ∫£ºŒ∂®«¯£© -->
                     <iframe
                         src="https://www.openstreetmap.org/export/embed.html?bbox=121.18%2C31.30%2C121.32%2C31.42&layer=mapnik&marker=31.37%2C121.23"
-                        title="BIMT π´Àæµÿ÷∑µÿÕº"
+                        title="BIMT ÂÖ¨Âè∏Âú∞ÂùÄÂú∞Âõæ"
                         loading="lazy">
                     </iframe>
                 </div>
@@ -623,7 +575,7 @@
 
         </div>
 
-        <!-- ===== µ◊≤ø∞Ê»® ===== -->
+        <!-- ===== Â∫ïÈÉ®ÁâàÊùÉ ===== -->
         <div class="footer">
             &copy; BETTER INTELLIGENT MANUFACTURING TECHNOLOGY CO., LTD
         </div>
