@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BIMT MOTOR</title>
-    <meta name="description" content="BIMT MOTOR - Make Better Happen" />
+    <title>BIMT MOTOR Robot Motor</title>
     <style>
+        /* 全局重置 */
         * {
             margin: 0;
             padding: 0;
@@ -13,137 +13,142 @@
         }
 
         body {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            /* 亮眼希望渐变：蓝→青→紫 */
-            background: linear-gradient(145deg, #00c6ff 0%, #0072ff 40%, #a18cd1 100%);
-            text-align: center;
-            overflow: hidden;
-            color: #fff;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+            background: #e6f2ff; /* 很浅的天蓝色 */
+            color: #1a3a4a;
+            padding: 20px;
+            /* 让内容填满高度 */
         }
 
-        .section {
+        /* 左上角区域：LOGO + 广告语 */
+        .header-left {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap; /* 手机换行 */
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: #0072ff;
+            letter-spacing: 1px;
+        }
+
+        .slogan {
+            font-size: clamp(0.9rem, 2vw, 1.6rem);
+            font-weight: 300;
+            color: #2a5f7a;
+            letter-spacing: 0.08em;
+            opacity: 0.8;
+        }
+
+        /* 中间内容：垂直居中 */
+        .main-content {
             flex: 1;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            padding: 0 20px;
-        }
-
-        /* 上部：flex列，底部对齐 */
-        .section-top {
-            flex-direction: column;
-            justify-content: flex-end;
-            padding-bottom: 0.3em;
-        }
-
-        /* 中部：居中 */
-        .section-middle {
             align-items: center;
+            text-align: center;
+            padding: 20px 0;
         }
 
-        /* 下部：flex列，顶部对齐 */
-        .section-bottom {
-            flex-direction: column;
-            justify-content: flex-start;
-            padding-top: 0.3em;
-        }
-
-        /* 所有文本：不换行，加粗，居中 */
-        .section span {
-            display: block;
-            white-space: nowrap;
-            font-weight: 700; /* 全部加粗 */
-            line-height: 1.2;
-            margin: 0 auto;   /* 水平居中 */
-        }
-
-        /* 组1：WELCOME TO 和 Make Better Happen 宽度一致 */
-        .top-line1,
-        .bottom-text {
-            width: 75%;
-        }
-
-        /* 组2：BIMT WORLD 和 BIMT MOTOR BETTER WORK 宽度一致 */
-        .top-line2,
-        .middle-text {
-            width: 90%;
-        }
-
-        /* 独立字体大小 */
-        .top-line1 {
-            font-size: clamp(1.2rem, 4vw, 2.8rem);
+        /* 欢迎语两行 */
+        .welcome-line1 {
+            font-size: clamp(1.8rem, 6vw, 4rem);
+            font-weight: 300;
             letter-spacing: 0.15em;
-            color: rgba(255, 255, 255, 0.85);
+            color: #1a4a5e;
+            margin-bottom: 0.1em;
         }
 
-        .top-line2 {
-            font-size: clamp(3rem, 12vw, 7rem);
-            letter-spacing: 0.04em;
-            background: linear-gradient(135deg, #fff7b0, #ffe066);
+        .welcome-line2 {
+            font-size: clamp(3.2rem, 12vw, 8rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: none;
-            filter: drop-shadow(0 4px 20px rgba(255, 215, 0, 0.3));
+            letter-spacing: 0.04em;
+            margin-bottom: 0.4em;
         }
 
-        .middle-text {
-            font-size: clamp(1.6rem, 5vw, 3.8rem);
-            letter-spacing: 0.08em;
-            color: #ffffff;
-            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+        /* 按钮样式 */
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            font-size: clamp(1.2rem, 3vw, 2.2rem);
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            text-decoration: none;
+            letter-spacing: 0.06em;
+            box-shadow: 0 8px 30px rgba(0, 114, 255, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 20px;
         }
 
-        .bottom-text {
-            font-size: clamp(1.2rem, 3.5vw, 2.6rem);
-            letter-spacing: 0.12em;
-            color: rgba(255, 255, 255, 0.9);
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 114, 255, 0.4);
         }
 
-        /* 极窄屏微调，放宽宽度以防溢出 */
-        @media (max-width: 360px) {
-            .top-line1,
-            .bottom-text {
-                width: 85%;
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        /* 底部版权，居中 */
+        .footer {
+            text-align: center;
+            font-size: clamp(0.7rem, 1.2vw, 1rem);
+            color: #5a7a8a;
+            letter-spacing: 0.05em;
+            padding: 15px 0 5px;
+            border-top: 1px solid rgba(0, 114, 255, 0.1);
+            margin-top: 20px;
+        }
+
+        /* 响应式微调：手机下按钮宽度自适应 */
+        @media (max-width: 480px) {
+            .btn {
+                width: 80%;
+                max-width: 300px;
+                padding: 14px 20px;
             }
-            .top-line2,
-            .middle-text {
-                width: 95%;
+            .header-left {
+                gap: 8px;
             }
-            .top-line1 { font-size: 1rem; }
-            .top-line2 { font-size: 2.2rem; }
-            .middle-text { font-size: 1.2rem; }
-            .bottom-text { font-size: 1rem; }
-        }
-
-        /* 超宽屏 */
-        @media (min-width: 1920px) {
-            .top-line1 { font-size: 3rem; }
-            .top-line2 { font-size: 8rem; }
-            .middle-text { font-size: 4.2rem; }
-            .bottom-text { font-size: 3rem; }
         }
     </style>
 </head>
 <body>
-    <!-- 上部 -->
-    <div class="section section-top">
-        <span class="top-line1">WELCOME TO</span>
-        <span class="top-line2">BIMT WORLD</span>
+
+    <!-- 左上角 LOGO + 广告语 -->
+    <div class="header-left">
+        <span class="logo">BIMT</span>
+        <span class="slogan">Make Better Happen</span>
     </div>
 
-    <!-- 中部 -->
-    <div class="section section-middle">
-        <span class="middle-text">BIMT MOTOR BETTER WORK</span>
+    <!-- 中间内容：欢迎语 + 按钮 -->
+    <div class="main-content">
+        <div class="welcome-line1">WELCOME TO</div>
+        <div class="welcome-line2">BIMT WORLD</div>
+        <!-- 按钮，点击跳转到 home.html -->
+        <a href="/home.html" class="btn">BIMT Motor Better Work</a>
     </div>
 
-    <!-- 下部 -->
-    <div class="section section-bottom">
-        <span class="bottom-text">Make Better Happen</span>
+    <!-- 底部版权 -->
+    <div class="footer">
+        &copy; BETTER INTELLIGENT MANUFACTURING TECHNOLOGY CO., LTD
     </div>
+
 </body>
 </html>
