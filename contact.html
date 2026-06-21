@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIMT MOTOR - Contact Us</title>
+    <style>
+        /* ===== 全局重置 & 基础 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #e6f2ff;
+            color: #1a3a4a;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== 顶部：LOGO + 广告语 ===== */
+        .header-left {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(0, 114, 255, 0.08);
+        }
+
+        .logo {
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: #0072ff;
+            letter-spacing: 1px;
+        }
+
+        .slogan {
+            font-size: clamp(0.9rem, 2vw, 1.6rem);
+            font-weight: 300;
+            color: #2a5f7a;
+            letter-spacing: 0.08em;
+            opacity: 0.8;
+        }
+
+        /* ===== 导航栏 ===== */
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 30px;
+            padding: 16px 0 18px;
+            border-bottom: 1px solid rgba(0, 114, 255, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .navbar a {
+            color: #1a4a5e;
+            text-decoration: none;
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            padding: 6px 4px;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #0072ff, #00c6ff);
+            transition: width 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #0072ff;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        .navbar a.active {
+            color: #0072ff;
+            font-weight: 600;
+        }
+
+        .navbar a.active::after {
+            width: 100%;
+        }
+
+        /* ===== 主内容 ===== */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* ----- 联系信息区（只保留公司信息） ----- */
+        .contact-info-section {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 4px 20px rgba(0, 114, 255, 0.06);
+        }
+
+        .contact-info-section .info-block {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* 公司全称：桌面端不换行，手机端允许折行 */
+        .contact-info-section .company-name {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            font-weight: 700;
+            color: #0a2a3a;
+            line-height: 1.3;
+            white-space: nowrap;          /* 强制不换行 */
+            overflow: hidden;
+            text-overflow: ellipsis;      /* 万一超长显示省略号，但实际不会 */
+        }
+
+        .contact-info-section .detail {
+            font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+            color: #1a4a5e;
+            line-height: 1.7;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .contact-info-section .detail .label {
+            font-weight: 600;
+            color: #0072ff;
+            min-width: 70px;
+            flex-shrink: 0;
+        }
+
+        .contact-info-section .detail a {
+            color: #0072ff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info-section .detail a:hover {
+            color: #00a6ff;
+            text-decoration: underline;
+        }
+
+        /* ----- 表单区（欢迎语位于标题上方） ----- */
+        .form-section {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 4px 20px rgba(0, 114, 255, 0.06);
+        }
+
+        .form-section .greeting {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            color: #2a5f7a;
+            text-align: center;
+            margin-bottom: 8px;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        .form-section h2 {
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            font-weight: 700;
+            color: #0a2a3a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #1a4a5e;
+            margin-bottom: 4px;
+            font-size: clamp(0.9rem, 1.2vw, 1rem);
+        }
+
+        .form-group label .required {
+            color: #e74c3c;
+            margin-left: 2px;
+        }
+
+        .form-group select,
+        .form-group textarea,
+        .form-group input {
+            padding: 12px 16px;
+            border: 1px solid rgba(0, 114, 255, 0.2);
+            border-radius: 10px;
+            font-size: clamp(0.95rem, 1.2vw, 1rem);
+            background: rgba(255, 255, 255, 0.7);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            font-family: inherit;
+            color: #1a3a4a;
+            width: 100%;
+        }
+
+        .form-group select:focus,
+        .form-group textarea:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: #0072ff;
+            box-shadow: 0 0 0 3px rgba(0, 114, 255, 0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .btn-submit {
+            padding: 14px 40px;
+            font-size: clamp(1rem, 1.4vw, 1.2rem);
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            letter-spacing: 0.06em;
+            box-shadow: 0 6px 24px rgba(0, 114, 255, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            align-self: center;
+            width: auto;
+            min-width: 200px;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 36px rgba(0, 114, 255, 0.4);
+        }
+
+        .btn-submit:active {
+            transform: scale(0.97);
+        }
+
+        /* ===== 底部版权 ===== */
+        .footer {
+            text-align: center;
+            font-size: clamp(0.7rem, 1.2vw, 1rem);
+            color: #5a7a8a;
+            letter-spacing: 0.05em;
+            padding: 18px 0 6px;
+            border-top: 1px solid rgba(0, 114, 255, 0.1);
+            margin-top: 40px;
+        }
+
+        /* ===== 响应式 ===== */
+
+        @media (max-width: 992px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            .header-left {
+                justify-content: center;
+                border-bottom: none;
+                padding-bottom: 6px;
+            }
+            .navbar {
+                gap: 6px 18px;
+                padding: 12px 0 14px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid rgba(0, 114, 255, 0.06);
+            }
+            .navbar a {
+                font-size: 0.95rem;
+            }
+            .contact-info-section,
+            .form-section {
+                padding: 18px;
+                border-radius: 14px;
+            }
+            /* 手机端公司名称允许换行，避免溢出 */
+            .contact-info-section .company-name {
+                white-space: normal;
+                overflow: visible;
+                text-overflow: clip;
+                word-break: break-word;
+            }
+            .contact-info-section .detail {
+                flex-direction: column;
+                gap: 2px;
+            }
+            .contact-info-section .detail .label {
+                min-width: auto;
+            }
+            .btn-submit {
+                width: 100%;
+                min-width: unset;
+            }
+            .footer {
+                font-size: 0.65rem;
+                margin-top: 30px;
+                padding: 14px 0 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ===== 顶部 LOGO + 广告语 ===== -->
+        <div class="header-left">
+            <span class="logo">BIMT</span>
+            <span class="slogan">Make Better Happen</span>
+        </div>
+
+        <!-- ===== 导航栏 ===== -->
+        <nav class="navbar">
+            <a href="/home.html">Home</a>
+            <a href="/about-us.html">About Us</a>
+            <a href="/products.html">Products</a>
+            <a href="/contact.html" class="active">Contact</a>
+        </nav>
+
+        <!-- ===== 主内容 ===== -->
+        <div class="main-content">
+
+            <!-- 联系信息（公司地址、电话等） -->
+            <section class="contact-info-section">
+                <div class="info-block">
+                    <div class="company-name">BETTER INTELLIGENT MANUFACTURING TECHNOLOGY CO., LTD</div>
+                    <div class="detail">
+                        <span class="label">Address</span>
+                        No. 295 Yufeng Road, Jiading District, Shanghai, China
+                    </div>
+                    <div class="detail">
+                        <span class="label">Tel</span>
+                        <a href="tel:+8617621509449">0086 - 176 2150 9449</a>
+                    </div>
+                    <div class="detail">
+                        <span class="label">E-Mail</span>
+                        <a href="mailto:info@bimtmotor.com">info@bimtmotor.com</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 联系表单（欢迎语置于标题上方） -->
+            <section class="form-section">
+                <div class="greeting">
+                    We look forward to hearing from you.<br />
+                    Please fill in the form below.
+                </div>
+                <h2>Send Us a Message</h2>
+
+                <!-- 使用 Formspree 免费服务，将表单提交到指定邮箱 -->
+                <form action="https://formspree.io/f/your-form-id" method="POST">
+                    <!-- 重要：将上面的 your-form-id 替换为您在 formspree.io 获取的实际表单ID -->
+
+                    <div class="form-group">
+                        <label for="inquiry-type">Inquiry Type <span class="required">*</span></label>
+                        <select id="inquiry-type" name="inquiry-type" required>
+                            <option value="">Please select...</option>
+                            <option value="Buy products">Buy products</option>
+                            <option value="Supply">Supply</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Full name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name <span class="required">*</span></label>
+                            <input type="text" id="company" name="company" placeholder="Company" required />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="country">Country <span class="required">*</span></label>
+                            <input type="text" id="country" name="country" placeholder="Country" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="tel">Tel <span class="required">*</span></label>
+                            <input type="tel" id="tel" name="tel" placeholder="Phone number" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                    </div>
+
+                    <button type="submit" class="btn-submit">SEND</button>
+                </form>
+                <p style="text-align:center; margin-top:12px; font-size:0.85rem; color:#5a7a8a;">
+                    All fields marked with <span style="color:#e74c3c;">*</span> are required.
+                </p>
+            </section>
+
+        </div>
+
+        <!-- ===== 底部版权 ===== -->
+        <div class="footer">
+            &copy; BETTER INTELLIGENT MANUFACTURING TECHNOLOGY CO., LTD
+        </div>
+
+    </div>
+</body>
+</html>
